@@ -28,6 +28,7 @@ export default function Routes() {
         name="User"
         component={User}
         options={({ route }) => ({ title: route.params.user.name})}
+        // options={{title: 'Usuários'}}
       />
     </Stack.Navigator>
   )
