@@ -43,7 +43,7 @@ export const Stars  = styled.FlatList.attrs({
 `;
 
 export const Starred  = styled.View`
-   background: #f5f5f5;
+   background: ${props => props.loading ? '#F00' : '#f5f5f5'};
    border-radius: 4px;
    padding: 10px 15px;
    margin-bottom: 20px;
@@ -79,3 +79,8 @@ export const Author = styled.Text`
   margin-top: 2px;
 `;
 
+export const Loading = styled.View`
+  display: flex;
+  flex: 1;
+  justify-content: center;
+`;
