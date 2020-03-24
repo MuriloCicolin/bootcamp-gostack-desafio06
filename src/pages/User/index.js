@@ -82,6 +82,12 @@ export default class User extends Component  {
     this.loadStarred();
   }
 
+  handleNavigate = star => {
+    const { navigation } = this.props;
+
+    navigation.navigate('Star', { star });
+  }
+
   render() {
     const { route } = this.props;
     const { user } = route.params;
@@ -106,8 +112,9 @@ export default class User extends Component  {
             onEndReached={this.loadMore}
             onRefresh={this.refreshList}
             refreshing={this.state.refreshing}
+
             renderItem={({ item }) => (
-              <Starred>
+              <Starred onPress={ () => this.handleNavigate(item)} underlayColor="transparent">
                 <OwnerAvatar source={{ uri: item.owner.avatar_url }} />
                 <Info>
                   <Title>{item.name}</Title>
